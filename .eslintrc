@@ -1,0 +1,77 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020, // Allows for the parsing of modern ECMAScript features
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    "import"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint"
+  ],
+  "rules": {
+    "prettier/prettier": [
+      1,
+      {
+        "semi": false,
+        "trailingComma": "none",
+        "printWidth": 150,
+        "tabWidth": 2,
+        "arrowParens": "avoid",
+        "singleQuote": true
+      }
+    ],
+    "semi": 0,
+    "eqeqeq": [
+      1,
+      "always"
+    ],
+    "no-undef": 0,
+    "no-console": 1,
+    "no-unused-vars": 0,
+    "no-mixed-operators": [
+      1,
+      {
+        "allowSamePrecedence": true
+      }
+    ],
+    "eol-last": [
+      2,
+      "always"
+    ],
+    "no-confusing-arrow": 0,
+    "arrow-parens": [
+      2,
+      "as-needed"
+    ],
+    "arrow-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "arrow-body-style": [
+      2,
+      "as-needed"
+    ],
+    "no-unused-expressions": 1,
+    "import/no-useless-path-segments": 1,
+    "import/no-extraneous-dependencies": 1,
+    "import/no-duplicates": 1,
+    "import/order": 1,
+    "import/newline-after-import": 1,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/no-empty-function": 0,
+    "@typescript-eslint/ban-ts-comment": 0
+  }
+}
