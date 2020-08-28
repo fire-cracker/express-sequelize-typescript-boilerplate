@@ -4,7 +4,7 @@
   "main": "src/app.ts",
   "license": "MIT",
   "scripts": {
-    "start": "npm run build && node build/index.js",
+    "start": "ts-node src/app.ts",
     "start:dev": "nodemon --watch src --exec ts-node src/app.ts",
     "build": "rimraf ./build && tsc",
     "test": "mocha -r ts-node/register src/tests/*.spec.ts --timeout 20000 --exit",
@@ -18,7 +18,10 @@
     "seed": "./node_modules/.bin/sequelize db:seed:all",
     "undo:seed": "./node_modules/.bin/sequelize db:seed:undo:all",
     "db:rollback": "yarn undo:migration && yarn undo:seed",
-    "migrate:seed": "yarn db:rollback && yarn migrate && yarn seed"
+    "migrate:seed": "yarn db:rollback && yarn migrate && yarn seed",
+    "docker:build": "docker build -t express-sequelize-typescript-boilerplate .",
+    "docker:run": "docker run --rm -it -p 8080:8080 express-sequelize-typescript-boilerplate"
+
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -40,7 +43,6 @@
     "@types/bcrypt": "^3.0.0",
     "@types/chai": "^4.2.12",
     "@types/cors": "^2.8.7",
-    "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.7",
     "@types/mocha": "^8.0.3",
     "@types/morgan": "^1.9.1",
